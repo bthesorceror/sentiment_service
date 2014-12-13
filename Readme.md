@@ -1,6 +1,6 @@
 # Sentiment Service
 
-[![Build Status](https://travis-ci.org/bthesorceror/sentiment_service.png?branch=ma    ster)](https://travis-ci.org/bthesorceror/sentiment_service)
+[![Build Status](https://travis-ci.org/bthesorceror/sentiment_service.svg?branch=master)](https://travis-ci.org/bthesorceror/sentiment_service)
 
 Provides http service for analyzing text for sentiment. Uses DIY's sentiment
 module.
