@@ -18,7 +18,7 @@ test("integration tests", function(t) {
   });
 
   t.test("POST with proper parameters", function(t) {
-    t.plan(1);
+    t.plan(2);
 
     var formData = qs.stringify({
       text: "This is a very very bad post."
@@ -35,6 +35,28 @@ test("integration tests", function(t) {
 
     request.on("response", function(res) {
       t.equal(res.statusCode, 200, "returns correct status");
+
+      var body = "";
+
+      res.on('data', function(data) {
+        body += data.toString();
+      });
+
+      res.on('end', function() {
+        var json = JSON.parse(body);
+        var expected = {
+          sentiment: {
+            comparative: -0.42857142857142855,
+            negative: [ 'bad' ],
+            positive: [],
+            score: -3,
+            tokens: [ 'this', 'is', 'a', 'very', 'very', 'bad', 'post' ],
+            words: [ 'bad' ]
+          }
+        }
+
+        t.deepEqual(json, expected, "returns the correct json");
+      });
     });
 
     request.end(formData);
