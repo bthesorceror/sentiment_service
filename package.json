@@ -1,0 +1,21 @@
+{
+  "name": "sentiment_service",
+  "version": "1.0.0",
+  "description": "http service for sentiment analysis",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "sentiment",
+    "service"
+  ],
+  "author": "Brandon Farmer",
+  "license": "ISC",
+  "devDependencies": {
+    "faucet": "0.0.1",
+    "hyperquest": "^1.0.1",
+    "tap": "^0.4.13",
+    "tape": "^3.0.3"
+  }
+}
